@@ -12,6 +12,9 @@ class BoostRegexConan(base.BoostBaseConan):
     lib_short_names = ["regex"]
     options = {"shared": [True, False], "use_icu": [True, False]}
     default_options = "shared=False", "use_icu=False"
+    b2_options = {
+        "boost.locale.icu" : "off",
+    }
     b2_requires = [
         "boost_assert",
         "boost_concept_check",
@@ -27,7 +30,11 @@ class BoostRegexConan(base.BoostBaseConan):
         "boost_throw_exception",
         "boost_type_traits"
     ]
-
+    
+    def configure_additional(self):
+        if self.options.use_icu:
+            self.b2_options["boost.locale.icu"] = "on"
+            
     def requirements_additional(self):
         if self.options.use_icu:
             self.requires("icu/59.1@bincrafters/testing")
