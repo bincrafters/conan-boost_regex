@@ -37,6 +37,6 @@ class BoostRegexConan(base.BoostBaseConan):
             
     def requirements_additional(self):
         if self.options.use_icu:
-            self.requires("icu/59.1@bincrafters/testing")
+            self.requires("icu/59.1@bincrafters/stable")
 
 
