@@ -4,7 +4,7 @@
 from conans import python_requires
 
 
-base = python_requires("boost_base/1.69.0@bincrafters/testing")
+base = python_requires("boost_base/1.69.0@bincrafters/stable")
 
 class BoostRegexConan(base.BoostBaseConan):
     name = "boost_regex"
