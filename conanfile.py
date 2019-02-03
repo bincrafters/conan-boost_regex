@@ -8,6 +8,7 @@ base = python_requires("boost_base/1.69.0@bincrafters/stable")
 
 class BoostRegexConan(base.BoostBaseConan):
     name = "boost_regex"
+    version = "1.69.0"
     url = "https://github.com/bincrafters/conan-boost_regex"
     lib_short_names = ["regex"]
     options = {
